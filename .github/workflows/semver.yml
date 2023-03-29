@@ -1,13 +1,6 @@
 name: semver
 
-on:
-  push:
-    branches:
-    - develop
-    - master
-  pull_request:
-    branches:
-    - master
+on: push
     
 jobs:
   update-semver:
