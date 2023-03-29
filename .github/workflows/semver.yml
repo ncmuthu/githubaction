@@ -6,6 +6,10 @@ on:
       - '**'
     tags:
       - 'v*.*.*'
+
+permissions:
+  contents: read
+  
 jobs:
   update-semver:
     runs-on: ubuntu-latest
