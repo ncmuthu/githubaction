@@ -1,7 +1,11 @@
 name: semver
 
-on: push
-    
+on:   
+  push:
+    branches-ignore:
+      - '**'
+    tags:
+      - 'v*.*.*'
 jobs:
   update-semver:
     runs-on: ubuntu-latest
