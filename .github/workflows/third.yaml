@@ -25,3 +25,7 @@ jobs:
     steps:
     - name: Check out code
       uses: actions/checkout@v2
+    - name: test
+      if: ${{ inputs.environment == 'test' }}
+      run: |
+        echo "I am test"
