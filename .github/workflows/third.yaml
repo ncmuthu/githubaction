@@ -19,7 +19,7 @@ permissions:
 jobs:
   build:
     name: DB Migrate
-    runs-on: [ ubuntu-large-4-16-01 ]
+    runs-on: ubuntu-latest
     container:
       image: mcr.microsoft.com/azure-cli
     steps:
