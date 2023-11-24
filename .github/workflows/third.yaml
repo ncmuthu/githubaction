@@ -1,0 +1,27 @@
+name: 'DB Migration'
+
+on:
+  #push:
+  #  branches: [ "feat/dbmigration_action" ]
+  workflow_dispatch:
+    inputs:
+      environment:
+        type: choice
+        description: Azure subscription environment name
+        options:
+        - test
+        - stg  
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  build:
+    name: DB Migrate
+    runs-on: [ ubuntu-large-4-16-01 ]
+    container:
+      image: mcr.microsoft.com/azure-cli
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
