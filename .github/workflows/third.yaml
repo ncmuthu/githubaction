@@ -20,12 +20,12 @@ jobs:
   build:
     name: DB Migrate
     runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
     container:
       image: mcr.microsoft.com/azure-cli
     steps:
     - name: Check out code
       uses: actions/checkout@v2
     - name: test
-      if: ${{ inputs.environment == 'test' }}
       run: |
         echo "I am test"
