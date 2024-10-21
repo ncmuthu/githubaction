@@ -22,4 +22,4 @@ jobs:
     steps:
       - name: Use the variable from previous job
         run: |
-          echo "The value of my_var is: ${{ needs.set-variable.outputs.my_var }}"
+          echo "The value of my_var is: ${{ steps.set_output.outputs.my_var }}"
