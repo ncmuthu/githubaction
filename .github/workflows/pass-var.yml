@@ -1,0 +1,24 @@
+name: Pass variable between jobs
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  set-variable:
+    runs-on: ubuntu-latest
+    outputs:
+      my_var: ${{ steps.set_output.outputs.my_var }}
+    steps:
+      - name: Set a variable
+        id: set_output
+        run: echo "my_var=Hello, World!" >> $GITHUB_ENV
+        # Or use: echo "::set-output name=my_var::Hello, World!" for older GitHub actions versions
+
+  use-variable:
+    needs: set-variable
+    runs-on: ubuntu-latest
+    steps:
+      - name: Use the variable from previous job
+        run: echo "The value of my_var is: ${{ needs.set-variable.outputs.my_var }}"
