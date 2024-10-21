@@ -21,4 +21,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Use the variable from previous job
-        run: echo "The value of my_var is: ${{ needs.set-variable.outputs.my_var }}"
+        run: |
+          echo "The value of my_var is: ${{ needs.set-variable.outputs.my_var }}"
