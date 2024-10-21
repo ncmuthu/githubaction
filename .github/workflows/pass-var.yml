@@ -8,6 +8,8 @@ on:
 jobs:
   set-variable:
     runs-on: ubuntu-latest
+    outputs:
+      my_var: ${{ steps.set_output.outputs.my_var }}        
     steps:
       - name: Set a variable
         id: set_output
