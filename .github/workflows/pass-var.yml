@@ -19,4 +19,5 @@ jobs:
     steps:
       - name: Access the variable from previous job
         run: |
+          echo "Outputs: ${{ toJson(needs.set-variable.outputs) }}"
           echo "The value of my_var is: ${{ env.my_var }}"
