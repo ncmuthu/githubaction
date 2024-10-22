@@ -29,5 +29,5 @@ jobs:
         run: |
           echo ${{ GITHUB_WORKSPACE }}
           ls -al ${{ github.workspace }}
-          echo "test" > ${{ github.workspace }}/testfile.txt
-          cat ${{ github.workspace }}/testfile.txt
+          echo "test" > /tmp/testfile.txt
+          cat /tmp/testfile.txt
