@@ -25,3 +25,9 @@ jobs:
       - name: test
         run: |
           echo ${{needs.job1.outputs.output1}}
+      - name: dir-check
+        run: |
+          echo ${{ github.workspace }}
+          ls -al ${{ github.workspace }}
+          echo "test" > ${{ github.workspace }}/testfile.txt
+          cat ${{ github.workspace }}/testfile.txt
