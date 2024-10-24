@@ -29,4 +29,6 @@ jobs:
         run: |
           ls -al ${{ github.workspace }}
           echo "test" > /tmp/testfile.txt
+          echo -e "\033[33mThis is a warning message\033[0m"  # Yellow for warning
+          echo -e "\033[31mOperation failed\033[0m"  # Red for failure
           cat /tmp/testfile.txt
